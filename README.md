@@ -1,2 +1,1 @@
-# training-tracker
-My training tracker
+* Training tracker
