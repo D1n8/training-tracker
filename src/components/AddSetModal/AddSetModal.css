@@ -1,0 +1,10 @@
+.add-set-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+}

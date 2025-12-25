@@ -20,6 +20,12 @@ export interface SetEntry {
   reps: number;
 }
 
+/* ===== Config ===== */
+
+const DB_NAME =
+  import.meta.env.VITE_DB_NAME ??
+  (import.meta.env.DEV ? 'fitnessDB_dev' : 'fitnessDB');
+
 /* ===== DB ===== */
 
 class FitnessDB extends Dexie {
@@ -28,7 +34,7 @@ class FitnessDB extends Dexie {
   sets!: Table<SetEntry>;
 
   constructor() {
-    super('fitnessDB');
+    super(DB_NAME);
 
     this.version(1).stores({
       trainings: '++id, date',
@@ -37,5 +43,8 @@ class FitnessDB extends Dexie {
     });
   }
 }
+
+console.log('Using IndexedDB:', DB_NAME);
+
 
 export const db = new FitnessDB();

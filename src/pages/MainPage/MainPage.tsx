@@ -1,32 +1,50 @@
+import { useEffect, useState } from 'react';
 import './MainPage.css'
+import ExerciseTable from '../../components/ExerciseTable';
+import type { IExerciseTable } from '../../modules/types'
 
 function MainPage() {
-    return ( 
+    const [exercises, setExercises] = useState<IExerciseTable[]>(
+        [
+            {
+                title: "Жим лежа",
+                sets: [
+                    {
+                        reps: 5,
+                        weight: 80
+                    },
+                    {
+                        reps: 3,
+                        weight: 85
+                    },
+                ]
+            },
+            {
+                title: "Подтягивания",
+                sets: [{
+                    reps: 7,
+                    weight: 20
+                }, {
+                    reps: 5,
+                    weight: 25
+                },
+                ]
+            }
+        ]
+    )
+
+    useEffect(() => {
+        
+    })
+
+
+    return (
         <main>
-            <table>
-                <caption>Жим лежа</caption>
-                <thead>
-                    <tr> 
-                        <th>Подход</th>
-                        <th>Вес (кг)</th>
-                        <th>Количество повторений</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>60</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>70</td>
-                        <td>9</td>
-                    </tr>
-                </tbody>
-            </table>
+            {
+                exercises.map(item => <ExerciseTable title={item.title} sets={item.sets} />)
+            }
         </main>
-     );
+    );
 }
 
 export default MainPage;
