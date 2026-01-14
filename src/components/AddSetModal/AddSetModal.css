@@ -1,4 +1,5 @@
 .add-set-modal{
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -8,3 +9,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.add-set-modal-input{
+    max-width: 170px;
+}
+

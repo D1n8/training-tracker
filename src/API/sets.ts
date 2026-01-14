@@ -1,15 +1,37 @@
-import { db } from '../db/db';
+import { supabase } from '../supabaseClient';
 
 export const SetAPI = {
   async add(exerciseId: number, reps: number, weight?: number) {
-    return db.sets.add({ exerciseId, reps, weight });
+    const { data, error } = await supabase
+      .from('sets')
+      .insert({
+        exercise_id: exerciseId,
+        reps,
+        weight
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
   },
 
   async getByExercise(exerciseId: number) {
-    return db.sets.where('exerciseId').equals(exerciseId).toArray();
+    const { data, error } = await supabase
+      .from('sets')
+      .select('*')
+      .eq('exercise_id', exerciseId);
+
+    if (error) throw error;
+    return data;
   },
 
   async remove(id: number) {
-    return db.sets.delete(id);
+    const { error } = await supabase
+      .from('sets')
+      .delete()
+      .eq('id', id);
+
+    if (error) throw error;
   }
 };

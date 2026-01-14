@@ -12,8 +12,26 @@
 
 .modal-content {
     min-width: 300px;
-    padding: 10px;
-    background-color: white;
+    padding: 30px;
+    background-color: black;
     border-radius: 10px;
+    border: 1px solid white;
     z-index: 100;
+}
+
+.btns-container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns-container .cancel{
+    color: white;
+    background-color: #e23e3e;
+}
+
+.btns-container .save{
+    color: white;
+    background-color: #0730e9;
 }

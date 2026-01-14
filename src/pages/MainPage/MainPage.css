@@ -1,16 +1,63 @@
+header{
+    position: sticky;
+    min-height: 50px;
+    padding: 20px 40px;
+    background-color: black;
+    border-bottom: 1px solid white;
+}
+
 caption{
     margin-bottom: 5px;
     text-align: left;
     font-weight: 600;
+    font-size: 22px;
 }
 
 table{
     border-collapse: collapse;
-    border: 1px solid black;
 }
 
 th, td {
   padding: 5px 10px;
-  border: 1px solid black;
+  border: 1px solid white;
   text-align: center;
+}
+
+.main{
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.top-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trainings-list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* align-items: start;  */
+}
+
+.training-item:not(:last-child){
+    padding-bottom: 30px;
+    border-bottom: 5px solid white;
+}
+
+.exercises-list{
+    margin-block: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.exercise-item{
+    flex: 1 0 300px;
+}
+
+.exercise-table{
+    margin-bottom: 10px;
 }

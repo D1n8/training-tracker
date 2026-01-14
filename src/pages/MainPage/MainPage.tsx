@@ -1,49 +1,39 @@
 import { useEffect, useState } from 'react';
 import './MainPage.css'
-import ExerciseTable from '../../components/ExerciseTable';
-import type { IExerciseTable } from '../../modules/types'
+import { TrainingAPI } from '../../API/trainings';
+import Training from '../../components/Training';
+import type { ITrainingProps } from '../../modules/types';
 
 function MainPage() {
-    const [exercises, setExercises] = useState<IExerciseTable[]>(
-        [
-            {
-                title: "Жим лежа",
-                sets: [
-                    {
-                        reps: 5,
-                        weight: 80
-                    },
-                    {
-                        reps: 3,
-                        weight: 85
-                    },
-                ]
-            },
-            {
-                title: "Подтягивания",
-                sets: [{
-                    reps: 7,
-                    weight: 20
-                }, {
-                    reps: 5,
-                    weight: 25
-                },
-                ]
-            }
-        ]
-    )
+    const [trainings, setTrainings] = useState<ITrainingProps[]>([])
 
     useEffect(() => {
-        
-    })
+        async function initTrainings() {
+            const trainings = await TrainingAPI.getAll()
+            setTrainings(trainings)
+        }
+        initTrainings()
+    }, [])
 
+    async function newTraining() {
+        const training = await TrainingAPI.create(Date.now());
+        setTrainings([training, ...trainings]);
+    }
 
     return (
-        <main>
-            {
-                exercises.map(item => <ExerciseTable title={item.title} sets={item.sets} />)
-            }
-        </main>
+        <>
+            <header>
+                <button onClick={() => newTraining()}>Начать тренировку</button>
+            </header>
+            <main className='main'>
+                <div className="trainings-list">
+                    {
+                        trainings.map(training => <Training key={training.id} id={training.id} date={training.date} />)
+                    }
+                </div>
+            </main>
+        </>
+
     );
 }
 

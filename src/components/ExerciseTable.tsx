@@ -2,13 +2,18 @@ import { useState } from 'react';
 import type { IExerciseTable } from '../modules/types'
 import AddSetModal from './AddSetModal/AddSetModal';
 
-function ExerciseTable({ title, sets }: IExerciseTable) {
+interface IProps extends IExerciseTable {
+  onAddSet: (exerciseId: number, reps: number, weight?: number) => Promise<void>;
+}
+
+
+function ExerciseTable({ id, onAddSet, name, sets }: IProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <>
-            <table>
-                <caption>{title}</caption>
+        <div className='exercise-item'>
+            <table className='exercise-table'>
+                <caption>{name}</caption>
                 <thead>
                     <tr>
                         <th>Подход</th>
@@ -19,7 +24,7 @@ function ExerciseTable({ title, sets }: IExerciseTable) {
                 <tbody>
                     {
                         sets.map((item, index) => (
-                            <tr>
+                            <tr key={item.id}>
                                 <td>{++index}</td>
                                 <td>{item.weight}</td>
                                 <td>{item.reps}</td>
@@ -29,8 +34,8 @@ function ExerciseTable({ title, sets }: IExerciseTable) {
                 </tbody>
             </table>
             <button onClick={() => setIsOpen(true)}>+</button>
-            <AddSetModal isOpen={isOpen} onClose={() => setIsOpen(false)}></AddSetModal>
-        </>
+            <AddSetModal onSave={(reps, weight) =>  onAddSet(id, reps, weight)} isOpen={isOpen} onClose={() => setIsOpen(false)}></AddSetModal>
+        </div>
     );
 }
 
