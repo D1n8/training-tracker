@@ -1,3 +1,5 @@
+export  type ExerciseTableMode = 'edit' | 'view'
+
 export interface ISet {
     id: number,
     weight?: number,
@@ -19,3 +21,4 @@ export interface ITrainingProps {
     id: number,
     date: Date
 }
+

@@ -33,6 +33,17 @@ function Training({ id, date }: ITrainingProps) {
         setExercises(updated);
     }
 
+    async function deleteSet(setId: number) {
+        await SetAPI.remove(setId)
+        const updated = await ExerciseAPI.getByTraining(id);
+        setExercises(updated);
+    }
+
+    async function deleteExercise(exerciseId: number) {
+        await ExerciseAPI.remove(exerciseId)
+        const updated = await ExerciseAPI.getByTraining(id);
+        setExercises(updated);
+    }
 
     return (
         <div className="training-item">
@@ -41,21 +52,20 @@ function Training({ id, date }: ITrainingProps) {
                 <button onClick={() => setIsOpen(true)}>Добавить упражнение</button>
             </div>
 
-
-
             <div className="exercises-list">
                 {
                     exercises.map(item =>
                         <ExerciseTable
+                            mode="edit"
                             onAddSet={addSet}
+                            onDeleteSet={deleteSet}
+                            onDeleteExercise={deleteExercise}
                             key={item.id}
                             id={item.id}
                             name={item.name}
                             sets={item.sets} />)
                 }
             </div>
-
-
 
             {
                 isOpen && (
