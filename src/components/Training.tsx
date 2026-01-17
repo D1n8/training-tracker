@@ -6,7 +6,7 @@ import AddExerciseModal from "./AddExerciseModal";
 import { SetAPI } from "../API/sets";
 import { formatDate } from "../utils";
 
-function Training({ id, date }: ITrainingProps) {
+function Training({ id, date, mode }: ITrainingProps) {
     const [exercises, setExercises] = useState<IExerciseTable[]>([])
     const [isOpen, setIsOpen] = useState(false)
 
@@ -49,14 +49,18 @@ function Training({ id, date }: ITrainingProps) {
         <div className="training-item">
             <div className="top-container">
                 <h2>Тренировка {formatDate(new Date(date))}</h2>
-                <button onClick={() => setIsOpen(true)}>Добавить упражнение</button>
+                {
+                    mode === 'edit' && (
+                        <button onClick={() => setIsOpen(true)}>Добавить упражнение</button>
+                    )
+                }
             </div>
 
             <div className="exercises-list">
                 {
                     exercises.map(item =>
                         <ExerciseTable
-                            mode="edit"
+                            mode={mode}
                             onAddSet={addSet}
                             onDeleteSet={deleteSet}
                             onDeleteExercise={deleteExercise}

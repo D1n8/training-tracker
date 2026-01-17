@@ -1,4 +1,4 @@
-export  type ExerciseTableMode = 'edit' | 'view'
+export type ExerciseTableMode = 'edit' | 'view'
 
 export interface ISet {
     id: number,
@@ -19,6 +19,7 @@ export interface IModalProps {
 
 export interface ITrainingProps {
     id: number,
-    date: Date
+    date: Date,
+    mode: ExerciseTableMode
 }
 

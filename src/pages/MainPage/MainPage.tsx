@@ -5,35 +5,40 @@ import Training from '../../components/Training';
 import type { ITrainingProps } from '../../modules/types';
 
 function MainPage() {
-    const [trainings, setTrainings] = useState<ITrainingProps[]>([])
+    const [training, setTraining] = useState<ITrainingProps>()
 
     useEffect(() => {
         async function initTrainings() {
-            const trainings = await TrainingAPI.getAll()
-            setTrainings(trainings)
+            const training = await TrainingAPI.getCurrent()
+            setTraining(training)
         }
         initTrainings()
     }, [])
 
     async function newTraining() {
-        const training = await TrainingAPI.create(Date.now());
-        setTrainings([training, ...trainings]);
+        const training = await TrainingAPI.start();
+        setTraining(training);
+    }
+
+    async function finishTraining() {
+        if (training) {
+            await TrainingAPI.finish(training.id)
+            setTraining(undefined)
+        }
     }
 
     return (
-        <>
-            <header>
-                <button onClick={() => newTraining()}>Начать тренировку</button>
-            </header>
-            <main className='main'>
-                <div className="trainings-list">
-                    {
-                        trainings.map(training => <Training key={training.id} id={training.id} date={training.date} />)
-                    }
-                </div>
-            </main>
-        </>
-
+        <main className='main'>
+            <button onClick={() => newTraining()}>Начать тренировку</button>
+            {
+                training && (
+                    <>
+                        <Training key={training.id} id={training.id} date={training.date} mode='edit' />
+                        <button onClick={() => finishTraining()}>Завершить тренировку</button>
+                    </>
+                )
+            }
+        </main>
     );
 }
 
