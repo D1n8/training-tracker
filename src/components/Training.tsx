@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { IExerciseTable, ITrainingProps } from "../modules/types";
 import ExerciseTable from "./ExerciseTable";
 import { ExerciseAPI } from "../API/exercise";
-import AddExerciseModal from "./AddExerciseModal";
+import AddExerciseModal from "./AddModal/AddExerciseModal";
 import { SetAPI } from "../API/sets";
 import { formatDate } from "../utils";
 

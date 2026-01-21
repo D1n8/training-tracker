@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router'
 import MainPage from '../pages/MainPage/MainPage';
-import TrainingsListPage from '../pages/TrainingsListPage/TrainingsListPage';
+// import TrainingsList from '../pages/TrainingsList/TrainingsList';
 
 function AppRouter() {
   return (
       <Routes>
         <Route path='/' element={<MainPage/>}/>
-        <Route path='/trainings' element={<TrainingsListPage/>}/>
+        {/* <Route path='/trainings' element={<TrainingsList/>}/> */}
       </Routes>
   );
 }

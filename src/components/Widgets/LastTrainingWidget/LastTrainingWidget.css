@@ -1,0 +1,14 @@
+.last-training{
+    width: 140px;
+}
+
+.last-training .top-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.last-training__widget-title{
+    font-size: 16px;
+}

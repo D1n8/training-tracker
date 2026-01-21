@@ -2,29 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    background-color: black;
-    color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
-button{
-    padding: 5px 10px;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    border-radius: 4px;
-    font-weight: 600;
+:root {
+  --main-green: #004643;
 }
 
-header{
-    position: sticky;
-    min-height: 50px;
-    padding: 20px 40px;
-    background-color: black;
-    border-bottom: 1px solid white;
+body{
+    background-color: #FAFAFA;
+    color: var(--main-green);
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn{
+    padding: 5px 10px;
+    background-color: var(--main-green);
+    color: #FAFAFA;
+    border: 1px solid var(--main-green);
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 caption{
@@ -48,4 +48,8 @@ th, td {
     margin: 0 auto;
     padding: 20px;
     max-width: 1200px;
+}
+
+.widget-title{
+    font-size: 20px;
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { ISet } from '../modules/types'
-import AddSetModal from './AddSetModal/AddSetModal';
+import AddSetModal from './AddModal/AddSetModal';
 
 type EditModeProps = {
     mode: 'edit';

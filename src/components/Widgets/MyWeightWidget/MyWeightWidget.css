@@ -1,0 +1,24 @@
+.my-weight {
+    width: 140px;
+}
+
+.my-weight .top-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-weight .add-btn{
+    background-color: var(--main-green);
+}
+
+.my-weight .my-weight__last-date {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.my-weight .my-weight__current {
+    font-size: 26px;
+    font-weight: 600;
+}
