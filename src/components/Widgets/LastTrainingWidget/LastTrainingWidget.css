@@ -1,14 +1,36 @@
 .last-training{
-    width: 140px;
+    width: 200px;
 }
 
 .last-training .top-container {
     width: 100%;
     display: flex;
+    margin-bottom: 20px;
     align-items: center;
     justify-content: space-between;
 }
 
 .last-training__widget-title{
     font-size: 16px;
+    font-weight: normal;
+}
+
+.last-training__date{
+    font-size: 12px;
+}
+
+.last-training__muscle-group{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.last-training .bottom-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.last-training .value{
+    font-size: 14px;
 }

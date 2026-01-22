@@ -14,14 +14,16 @@ function LastTrainingWidget() {
                     Грудь + трицепс
                 </p>
 
-                <div className="last-training__time">
-                    <p>Время</p>
-                    <p>1 ч. 27 мин.</p>
-                </div>
+                <div className="bottom-container">
+                    <div className="last-training__time">
+                        <p><b>Время</b></p>
+                        <p className='value'>1 ч. 27 мин.</p>
+                    </div>
 
-                <div className="last-training__volume">
-                    <p>Объем</p>
-                    <p>3600 кг</p>
+                    <div className="last-training__volume">
+                        <p><b>Объем</b></p>
+                        <p className='value'>3600 кг</p>
+                    </div>
                 </div>
             </div>
         </Widget>
