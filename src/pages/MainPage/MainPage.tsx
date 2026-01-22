@@ -6,6 +6,7 @@ import type { ITrainingProps } from '../../modules/types';
 import Widget from '../../UI/Widget/Widget';
 import MyWeightWidget from '../../components/Widgets/MyWeightWidget/MyWeightWidget';
 import LastTrainingWidget from '../../components/Widgets/LastTrainingWidget/LastTrainingWidget';
+import TimerWidget from '../../components/Widgets/TimerWidget/TimerWidget';
 
 function MainPage() {
     const [training, setTraining] = useState<ITrainingProps>()
@@ -35,6 +36,7 @@ function MainPage() {
             <button className='btn' onClick={() => newTraining()}>Начать тренировку</button>
             <MyWeightWidget/>
             <LastTrainingWidget/>
+            <TimerWidget/>
         </main>
     );
 }

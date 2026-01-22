@@ -1,0 +1,18 @@
+.timer{
+    width: 140px;
+}
+
+.timer-title{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.timer-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timer-value{
+    font-size: 18px;
+}

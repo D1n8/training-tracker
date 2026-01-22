@@ -18,6 +18,11 @@ button {
     cursor: pointer;
 }
 
+.svg-btn{
+    border: none;
+    background: none;
+}
+
 .btn{
     padding: 5px 10px;
     background-color: var(--main-green);
