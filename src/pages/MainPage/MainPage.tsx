@@ -7,6 +7,7 @@ import MyWeightWidget from '../../components/Widgets/MyWeightWidget/MyWeightWidg
 import LastTrainingWidget from '../../components/Widgets/LastTrainingWidget/LastTrainingWidget';
 import TimerWidget from '../../components/Widgets/TimerWidget/TimerWidget';
 import ExerciseTableWidget from '../../components/Widgets/ExerciseTableWidget/ExerciseTableWidget';
+import TrainingAnalytics from '../../components/Widgets/TrainingAnalytics/TrainingAnalytics';
 
 const mockData = {
     id: 1,
@@ -65,6 +66,7 @@ function MainPage() {
             <LastTrainingWidget/>
             <TimerWidget/>
             <ExerciseTableWidget {...mockData}/>
+            <TrainingAnalytics/>
         </main>
     );
 }
