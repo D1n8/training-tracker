@@ -1,0 +1,20 @@
+caption{
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+tr{
+    border-bottom: 1px solid #FAFAFA;
+}

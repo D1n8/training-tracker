@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { IExerciseTable, ITrainingProps } from "../modules/types";
-import ExerciseTable from "./ExerciseTable";
+import ExerciseTable from "./Widgets/ExerciseTableWidget/ExerciseTableWidget";
 import { ExerciseAPI } from "../API/exercise";
 import AddExerciseModal from "./AddModal/AddExerciseModal";
 import { SetAPI } from "../API/sets";

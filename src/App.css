@@ -32,23 +32,6 @@ button {
     font-weight: 600;
 }
 
-caption{
-    margin-bottom: 5px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 22px;
-}
-
-table{
-    border-collapse: collapse;
-}
-
-th, td {
-  padding: 5px 10px;
-  border: 1px solid white;
-  text-align: center;
-}
-
 .main{
     margin: 0 auto;
     padding: 20px;

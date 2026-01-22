@@ -1,12 +1,39 @@
 import { useEffect, useState } from 'react';
 import './MainPage.css'
-import { TrainingAPI } from '../../API/trainings';
-import Training from '../../components/Training';
+// import { TrainingAPI } from '../../API/trainings';
+// import Training from '../../components/Training';
 import type { ITrainingProps } from '../../modules/types';
-import Widget from '../../UI/Widget/Widget';
 import MyWeightWidget from '../../components/Widgets/MyWeightWidget/MyWeightWidget';
 import LastTrainingWidget from '../../components/Widgets/LastTrainingWidget/LastTrainingWidget';
 import TimerWidget from '../../components/Widgets/TimerWidget/TimerWidget';
+import ExerciseTableWidget from '../../components/Widgets/ExerciseTableWidget/ExerciseTableWidget';
+
+const mockData = {
+    id: 1,
+    name: 'Жим',
+    sets: [
+        {
+            id: 1,
+            weight: 20,
+            reps: 10
+        },
+        {
+            id: 2,
+            weight: 40,
+            reps: 10
+        },
+        {
+            id: 3,
+            weight: 60,
+            reps: 10
+        },
+        {
+            id: 4,
+            weight: 70,
+            reps: 8
+        }
+    ]
+}
 
 function MainPage() {
     const [training, setTraining] = useState<ITrainingProps>()
@@ -37,6 +64,7 @@ function MainPage() {
             <MyWeightWidget/>
             <LastTrainingWidget/>
             <TimerWidget/>
+            <ExerciseTableWidget {...mockData}/>
         </main>
     );
 }
