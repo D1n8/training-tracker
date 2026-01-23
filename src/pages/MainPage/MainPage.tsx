@@ -60,14 +60,17 @@ function MainPage() {
     // }
 
     return (
-        <main className='main'>
-            <button className='btn' onClick={() => newTraining()}>Начать тренировку</button>
-            <MyWeightWidget/>
-            <LastTrainingWidget/>
-            <TimerWidget/>
-            <ExerciseTableWidget {...mockData}/>
-            <TrainingAnalytics/>
-        </main>
+        <>
+            <main className='main'>
+                <button className='btn' onClick={() => newTraining()}>Начать тренировку</button>
+                <MyWeightWidget />
+                <LastTrainingWidget />
+                <TimerWidget />
+                <ExerciseTableWidget {...mockData} />
+                <TrainingAnalytics />
+            </main>
+        </>
+
     );
 }
 

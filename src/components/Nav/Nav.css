@@ -1,0 +1,19 @@
+.nav {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-green);
+}
+
+.nav-btn{
+    flex: 1 1 100px;
+    background-color: inherit;
+    border-radius: 0;
+}
+
+.nav-btn:not(:last-child) {
+    border-right: 1px solid #FAFAFA;
+}

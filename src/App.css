@@ -34,6 +34,7 @@ button {
 
 .main{
     margin: 0 auto;
+    margin-bottom: 70px;
     padding: 20px;
     max-width: 1200px;
 }
