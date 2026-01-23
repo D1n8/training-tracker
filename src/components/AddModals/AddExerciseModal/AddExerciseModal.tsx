@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import Modal from "../Modal/Modal";
-import type { IModalProps } from "../../modules/types";
+import Modal from "../../Modal/Modal";
+import type { IModalProps } from "../../../modules/types";
 
 interface IAddExerciseModalProps extends IModalProps {
     trainingId: number,

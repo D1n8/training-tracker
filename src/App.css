@@ -35,10 +35,16 @@ button {
 .main{
     margin: 0 auto;
     margin-bottom: 70px;
-    padding: 20px;
+    padding: 10px;
     max-width: 1200px;
 }
 
 .widget-title{
     font-size: 20px;
+}
+
+.top-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

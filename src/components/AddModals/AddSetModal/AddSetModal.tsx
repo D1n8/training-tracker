@@ -1,6 +1,6 @@
 import { useState } from "react";
-import type { IModalProps } from "../../modules/types";
-import Modal from "../Modal/Modal";
+import type { IModalProps } from "../../../modules/types";
+import Modal from "../../Modal/Modal";
 import './AddSetModal.css'
 
 interface IAddSetModalProps extends IModalProps {

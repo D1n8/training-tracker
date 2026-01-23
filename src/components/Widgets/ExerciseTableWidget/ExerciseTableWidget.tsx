@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { ISet } from '../../../modules/types'
-import AddSetModal from '../../AddModal/AddSetModal';
+import AddSetModal from '../../AddModals/AddSetModal/AddSetModal';
 import Widget from '../../../UI/Widget/Widget';
 import './ExerciseTableWidget.css'
 
@@ -26,8 +26,8 @@ function ExerciseTableWidget({ id, name, sets, ...props }: ExerciseTableWidgetPr
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <Widget>
-            <div className='exercise-item'>
+        <Widget className='exercise-item'>
+            <div className='exercise-item__container'>
                 <table className='exercise-table'>
                     <caption >
                         <span className='exercise-table__title'>{name}</span>
@@ -48,7 +48,7 @@ function ExerciseTableWidget({ id, name, sets, ...props }: ExerciseTableWidgetPr
                         <tr>
                             <th>№</th>
                             <th>Вес</th>
-                            <th>Кол-во</th>
+                            <th>Кол</th>
                         </tr>
                     </thead>
                     <tbody>

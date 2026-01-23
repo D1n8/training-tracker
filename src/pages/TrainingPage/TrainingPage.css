@@ -1,9 +1,16 @@
-.training-page__title{
-    margin-bottom: 20px;
+.training-page__box{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.training-page__box{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.training-page .top-container{
+    margin-bottom: 10px;
+}
+
+.training-page__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }

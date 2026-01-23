@@ -1,11 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import Widget from '../../../UI/Widget/Widget';
 import './LastTrainingWidget.css'
 
 function LastTrainingWidget() {
-    const navigate = useNavigate()
     return (
-        <Widget className='last-training' onClick={() => navigate('/training')}>
+        <Widget className='last-training'>
             <div className="last-training__container">
                 <div className="top-container">
                     <h2 className="widget-title last-training__widget-title">Тренировка</h2>
