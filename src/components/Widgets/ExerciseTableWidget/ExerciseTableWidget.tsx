@@ -30,7 +30,7 @@ function ExerciseTableWidget({ id, name, sets, ...props }: ExerciseTableWidgetPr
             <div className='exercise-item'>
                 <table className='exercise-table'>
                     <caption >
-                        <span style={{ marginRight: 20 }}>{name}</span>
+                        <span className='exercise-table__title'>{name}</span>
                         {
                             props.mode === 'edit' && (
                                 <span onClick={() => {

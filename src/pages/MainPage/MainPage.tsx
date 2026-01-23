@@ -9,33 +9,6 @@ import TimerWidget from '../../components/Widgets/TimerWidget/TimerWidget';
 import ExerciseTableWidget from '../../components/Widgets/ExerciseTableWidget/ExerciseTableWidget';
 import TrainingAnalytics from '../../components/Widgets/TrainingAnalytics/TrainingAnalytics';
 
-const mockData = {
-    id: 1,
-    name: 'Жим',
-    sets: [
-        {
-            id: 1,
-            weight: 20,
-            reps: 10
-        },
-        {
-            id: 2,
-            weight: 40,
-            reps: 10
-        },
-        {
-            id: 3,
-            weight: 60,
-            reps: 10
-        },
-        {
-            id: 4,
-            weight: 70,
-            reps: 8
-        }
-    ]
-}
-
 function MainPage() {
     const [training, setTraining] = useState<ITrainingProps>()
 

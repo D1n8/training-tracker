@@ -1,0 +1,9 @@
+.training-page__title{
+    margin-bottom: 20px;
+}
+
+.training-page__box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
