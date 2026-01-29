@@ -56,6 +56,32 @@ const sortTrainingData = (training: any): Training => {
   return training;
 };
 
+
+// получить все тренировки для аналитики
+
+export const getAllCompletedTrainings = async (): Promise<Training[]> => {
+  const selectQuery = `
+    *,
+    training_exercises (
+      *,
+      exercises (*),
+      sets (*)
+    )
+  `;
+
+  const { data, error } = await supabase
+    .from('trainings')
+    .select(selectQuery)
+    .eq('is_active', false) // Только завершенные
+    .order('date', { ascending: false }) // Сначала новые
+    .order('created_at', { ascending: false }); // Если даты совпадают
+
+  if (error) throw error;
+
+  // Применяем вашу функцию сортировки к каждой тренировке в массиве
+  return data ? data.map(sortTrainingData) : [];
+};
+
 // --- УПРАВЛЕНИЕ ТРЕНИРОВКОЙ ---
 
 export const startWorkout = async () => {

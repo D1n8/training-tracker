@@ -1,0 +1,13 @@
+.analytic-title{
+    margin-bottom: 30px;
+}
+
+.analytic-training{
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--main-green);
+}
+
+.analytic-training .title{
+    margin-bottom: 10px;
+}
