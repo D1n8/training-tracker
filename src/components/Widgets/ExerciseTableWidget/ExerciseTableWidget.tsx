@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import type { Set } from '../../../modules/types';
-import AddSetModal from '../../AddModals/AddSetToTrainingModal/AddSetToTrainingModal';
 import Widget from '../../../UI/Widget/Widget';
 import './ExerciseTableWidget.css'
 
 type EditModeProps = {
     mode: 'edit';
-    onAddSet: (exerciseId: string, reps: number, weight?: number) => Promise<void>;
     onDeleteSet: (setId: string) => Promise<void>;
     onDeleteExercise: (exerciseId: string) => Promise<void>;
 };
@@ -22,7 +19,6 @@ type ExerciseTableWidgetProps = {
 } & (EditModeProps | ViewModeProps);
 
 function ExerciseTableWidget({ id, name, sets, ...props }: ExerciseTableWidgetProps) {
-    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <Widget className='exercise-item'>
@@ -73,18 +69,6 @@ function ExerciseTableWidget({ id, name, sets, ...props }: ExerciseTableWidgetPr
                         ))}
                     </tbody>
                 </table>
-                {/* {
-                    props.mode === 'edit' && (
-                        <>
-                            <button onClick={() => setIsOpen(true)}>+</button>
-                            <AddSetModal 
-                                onSave={(reps, weight) => props.onAddSet(id, reps, weight)} 
-                                isOpen={isOpen} 
-                                onClose={() => setIsOpen(false)}
-                            />
-                        </>
-                    )
-                } */}
             </div>
         </Widget>
     );

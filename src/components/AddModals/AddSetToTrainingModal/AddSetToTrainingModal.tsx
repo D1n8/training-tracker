@@ -48,16 +48,16 @@ function AddSetToTrainingModal({ isOpen, onClose, onSave }: IAddSetModalProps) {
 
 
                 <div className="input-container">
-                    <label htmlFor="weight" style={{ marginRight: '10px' }}>Вес</label>
+                    <label htmlFor="weight" style={{ marginRight: '10px', color: 'white' }}>Вес</label>
                     <input className="add-set-modal-input" type="number" name="weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
                 </div>
                 <div className="input-container">
-                    <label htmlFor="reps" style={{ marginRight: '10px' }}>Количество</label>
+                    <label htmlFor="reps" style={{ marginRight: '10px', color: 'white' }}>Количество</label>
                     <input className="add-set-modal-input" type="number" name="reps" value={reps} onChange={(e) => setReps(e.target.value)} />
                 </div>
                 <div className="btns-container">
-                    <button className="cancel" onClick={() => onClose()}>Отмена</button>
-                    <button className="save" onClick={() => handleSave()}>Сохранить</button>
+                    <button className="btn cancel" onClick={() => onClose()}>Отмена</button>
+                    <button className="btn save" onClick={() => handleSave()}>Сохранить</button>
                 </div>
             </div>
         </Modal>

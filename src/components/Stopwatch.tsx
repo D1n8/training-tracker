@@ -21,14 +21,15 @@ function Stopwatch({ isStart, time, setTime }: IStopwatchProps) {
 
     }, [isStart]);
 
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
+    const hours = Math.floor(time / 3600)
+    const minutes = Math.floor((time % 3600) / 60);
+    const seconds = (time % 3600) % 60;
     const format = (num: number) => num < 10 ? `0${num}` : num;
 
     return (
         <div className="stopwatch training-page__time">
             <p className="value">
-                {format(minutes)} : {format(seconds)}
+                {format(hours)} : {format(minutes)} : {format(seconds)}
             </p>
         </div>
     );

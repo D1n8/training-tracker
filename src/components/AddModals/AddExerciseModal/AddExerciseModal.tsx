@@ -17,11 +17,11 @@
         return ( 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <div className="add-exercise-modal">
-                    <label htmlFor="exercise" style={{marginRight: '10px'}}>Упражнение</label>
+                    <label htmlFor="exercise" style={{marginRight: '10px', color: "white"}}>Упражнение</label>
                     <input type="text" name="exercise" ref={inputRef}/>
                     <div className="btns-container">
-                        <button className="cancel" onClick={() => onClose()}>Отмена</button>
-                        <button className="save" onClick={() => handleSave()}>Сохранить</button>
+                        <button className="btn cancel" onClick={() => onClose()}>Отмена</button>
+                        <button className="btn save" onClick={() => handleSave()}>Сохранить</button>
                     </div>
                 </div>
             </Modal>
