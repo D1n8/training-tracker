@@ -17,7 +17,7 @@ type ExerciseTableWidgetProps = {
     name: string;
     sets: Set[];
 } & (EditModeProps | ViewModeProps);
-
+console.log('exercise widget')
 function ExerciseTableWidget({ id, name, sets, ...props }: ExerciseTableWidgetProps) {
 
     return (

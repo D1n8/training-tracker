@@ -14,3 +14,9 @@
     align-items: center;
     margin-bottom: 20px;
 }
+
+.loading {
+    margin: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}

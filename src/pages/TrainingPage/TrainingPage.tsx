@@ -130,7 +130,9 @@ function TrainingPage() {
         await fetchDashboardData()
     }
 
-    if (isLoading && !trainingPage) return <div>Загрузка...</div>;
+    if (isLoading && !trainingPage) return <div className='loading'>Загрузка...</div>;
+
+    console.log('training page')
 
     return (
         <main className="main">
